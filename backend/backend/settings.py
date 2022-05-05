@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-2a3gu0c#!+6+qe45jjk@m$e*u-7=$20n2lvtn-e5*h(7x^!!64
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
@@ -80,10 +80,23 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'meduzzenapp',
+        'USER': 'yakov',
+        'PASSWORD': 'qwerty123',
+        'HOST': 'db',
+        'PORT': '5432',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '24322',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
