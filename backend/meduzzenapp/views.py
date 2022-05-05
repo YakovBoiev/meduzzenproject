@@ -14,3 +14,12 @@ class UserModelViewSet(ModelViewSet):
             serializer.save(password=password)
         else:
             serializer.save()
+
+    def perform_update(self, serializer):
+        if 'password' in self.request.data:
+            password = make_password(self.request.data['password'])
+            serializer.save(password=password)
+        else:
+            serializer.save()
+
+
